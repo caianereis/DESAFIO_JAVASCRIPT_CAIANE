@@ -32,8 +32,12 @@ function SetCarToCompare(el, carClass) {
             if(carArr.length < 2) {
                 carArr.push(carClass);
             } else {
-                alert("Você só pode comparar 2 carros");
                 el.checked = false;
+                alert("Você só pode comparar 2 carros");
+                return
+            }
+            if(GetCarArrPosition(carArr, carClass) === -1){
+                carArr.push(carClass)
             }
         } else {
             let pos = GetCarArrPosition(carArr, carClass);
